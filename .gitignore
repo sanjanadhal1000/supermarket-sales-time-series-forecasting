@@ -1,5 +1,12 @@
 __pycache__/
 *.pyc
-.venv/
+*.pyo
+*.pyd
+*.db
 .env
-data/raw/
+venv/
+.env/
+*.h5
+*.keras
+*.pkl
+.DS_Store
