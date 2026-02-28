@@ -98,11 +98,25 @@ def main():
         }
     }
 
+    # Compare based on RMSE
+    if arima_rmse < lstm_rmse:
+        best_model = "ARIMA"
+    else:
+        best_model = "LSTM"
+
+    with open("results/best_model.txt", "w") as f:
+        f.write(f"Best model based on RMSE: {best_model}")
+
     with open("results/metrics.json", "w") as f:
         json.dump(results, f, indent=4)
 
     print("Training & Evaluation Complete")
     print(json.dumps(results, indent=4))
+
+
+
+    summary_df = pd.DataFrame(results).T
+    summary_df.to_csv("reports/performance_summary.csv")
 
 
 if __name__ == "__main__":

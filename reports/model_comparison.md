@@ -1,43 +1,36 @@
-# Model Comparison Report
+# Advanced Model Evaluation Report
 
-## Objective
-Evaluate and compare ARIMA and LSTM models for time-series forecasting.
+## Methodology
 
----
+Models evaluated using:
 
-## Evaluation Metrics
-
-- RMSE (Root Mean Squared Error)
-- MAE (Mean Absolute Error)
-- MAPE (Mean Absolute Percentage Error)
-
----
-
-## Results
-
-| Model | RMSE   | MAE    | MAPE | Anomalies |
-|-------|------  |------  |------|-----------|
-| ARIMA | 721.93 | 583.55 | 54.10| 1         |
-| LSTM  | 740.07 | 610.45 | 59.29| 0         |
+- RMSE
+- MAE
+- MAPE
+- Walk-forward validation
+- Residual distribution
+- Z-score anomaly detection
 
 ---
 
-## Residual Analysis
+## Visual Diagnostics
 
-Residuals = Actual - Predicted
-
-Residuals were analyzed using Z-score anomaly detection (threshold = 3).
-
-Observations:
-- Points beyond 3 standard deviations are flagged as anomalies.
-- Lower residual variance indicates better stability.
+See:
+- results/plots/ARIMA_forecast.png
+- results/plots/LSTM_forecast.png
+- Residual histograms
 
 ---
 
-## Conclusion
+## Model Ranking Criteria
 
-- ARIMA performs well on structured linear time-series.
-- LSTM captures nonlinear patterns but requires more data.
-- Based on metrics, select the model with lowest RMSE and MAPE.
+Primary metric: RMSE  
+Secondary metric: MAPE  
+Tertiary metric: Stability (Residual variance)
 
-For this dataset, the better model is determined from metrics.json.
+---
+
+## Final Decision
+
+Best model is automatically selected and saved in:
+results/best_model.txt
