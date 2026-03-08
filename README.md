@@ -119,21 +119,6 @@ Available Endpoints
     /forecast → Multi-step forecasting
     /monitor → Monitoring metrics
 
-    Example Request
-
-        POST /predict
-        
-        {
-          "values": [120, 130, 125, 140, 150]
-        }
-        
-        Example Response
-        
-        {
-          "prediction": 155.23,
-          "latency": 0.023
-        }
-
 Monitoring Strategy
 
     The deployed system includes basic production monitoring:
